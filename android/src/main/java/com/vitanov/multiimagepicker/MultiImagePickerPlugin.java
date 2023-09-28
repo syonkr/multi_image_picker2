@@ -21,6 +21,7 @@ import androidx.core.content.ContextCompat;
 import androidx.exifinterface.media.ExifInterface;
 
 import com.sangcomz.fishbun.FishBun;
+import com.sangcomz.fishbun.MimeType;
 import com.sangcomz.fishbun.FishBunCreator;
 import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter;
 
@@ -610,7 +611,7 @@ public class MultiImagePickerPlugin implements
         if (requestCode == REQUEST_CODE_CHOOSE && resultCode == Activity.RESULT_CANCELED) {
             finishWithError("CANCELLED", "The user has cancelled the selection");
         } else if (requestCode == REQUEST_CODE_CHOOSE && resultCode == Activity.RESULT_OK) {
-            List<Uri> photos = data.getParcelableArrayListExtra(INTENT_PATH);
+            List<Uri> photos = data.getParcelableArrayListExtra(FishBun.INTENT_PATH);
             if (photos == null) {
                 clearMethodCallAndResult();
                 return false;
