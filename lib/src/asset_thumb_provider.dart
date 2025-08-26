@@ -69,7 +69,7 @@ class AssetThumbImageProvider extends ImageProvider<AssetThumbImageProvider> {
 
   @override
   int get hashCode =>
-      hashValues(asset.identifier, scale, width, height, quality);
+      Object.hash(asset.identifier, scale, width, height, quality);
 
   @override
   String toString() => '$runtimeType(${asset.identifier}, scale: $scale, '
